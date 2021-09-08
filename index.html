@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/bootstrap.css">
     <link rel="stylesheet" href="styles/nv.d3.css">
     <link rel="stylesheet" href="scripts/jquery-ui-1.11.4/jquery-ui.min.css">
+    
     <style>
 		#chart{
 			height: 400px;
@@ -32,6 +33,7 @@
     <script src="scripts/findEventHandlers.js"></script>
   </head>
   <body>
+    
     <div class="text-center">
       <h1 class="text-primary"><strong>JS Dude Salary App</strong></h1>
       <p>Salary, the Promised amount you never get</small>
@@ -41,7 +43,8 @@
 		    <input class="form-control" type='text' id='name' placeholder='Name'>
 		    <input class="form-control" type='text' id='salary' placeholder='Salary'>
 		    <button class="btn btn-success form-control" id="AddRecord">Add Record</button>
-		    <button class="btn btn-info" id="showLast">Show Last</button>
+         <!-- Button trigger modal -->
+		    <button  id="showLast" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Show Last</button>
 		    <button class="btn btn-info" id="recordCount">Record Count</button>
     	</div>
     </div>
@@ -65,5 +68,26 @@
 	  <p>Record count: <span id="numberOfRecords" class="text-success"></span></p>	  
 	</div>
   <h3 class="text-primary hide">Initial Count: <span id="initial-count"></span></h3>
+  
   </body>
+ <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 </html>  

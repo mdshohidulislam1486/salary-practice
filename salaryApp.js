@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .addEventListener("click", addRecordHandler);
   const btnShowLast = document.getElementById("showLast");
   btnShowLast.addEventListener("click", function showLastHandler(e) {
+
     showLastItem();
   });
 
@@ -80,15 +81,20 @@ const initialCountListener = function () {
 };
 
 function addRecordHandler() {
-  const name = document.getElementById("name").value;
-  const salary = document.getElementById("salary").value;
+  const name1 = document.getElementById("name");
+  const salary1 = document.getElementById("salary");
+  
+  const name = name1.value;
+  const salary = salary1.value;
+  name1.value ='';
+  salary1.value='';
 
   if (!name || !salary) {
     showDataError(name, salary);
     return;
   }
 
-  addRecord(name, !salary);
+  addRecord(name, salary);
 }
 
 function addRecord(name, salary) {
@@ -225,7 +231,7 @@ const uniquifyNames = function (items) {
   const uniqueNames = {};
 
   return items.map(function (item) {
-    if (uniqueNames[item.name]) {
+    if (uniqueNames[item.name] !== undefined) {
       uniqueNames[item.name] += " ";
       item.name += uniqueNames[item.name];
     } else {
